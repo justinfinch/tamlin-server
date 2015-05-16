@@ -1,0 +1,318 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{E1FE0058-3393-4B73-8637-D6104E4DD348}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Tamlin.MCServer.Web</RootNamespace>
+    <AssemblyName>Tamlin.MCServer.Web</AssemblyName>
+    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Autofac">
+      <HintPath>..\packages\Autofac.3.5.2\lib\net40\Autofac.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin">
+      <HintPath>..\packages\Microsoft.Owin.3.0.1\lib\net45\Microsoft.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Host.HttpListener">
+      <HintPath>..\packages\Microsoft.Owin.Host.HttpListener.3.0.1\lib\net45\Microsoft.Owin.Host.HttpListener.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Hosting">
+      <HintPath>..\packages\Microsoft.Owin.Hosting.3.0.1\lib\net45\Microsoft.Owin.Hosting.dll</HintPath>
+    </Reference>
+    <Reference Include="Nancy">
+      <HintPath>..\packages\Nancy.1.2.0\lib\net40\Nancy.dll</HintPath>
+    </Reference>
+    <Reference Include="Nancy.Bootstrappers.Autofac">
+      <HintPath>..\packages\Nancy.Bootstrappers.Autofac.1.2.0\lib\net40\Nancy.Bootstrappers.Autofac.dll</HintPath>
+    </Reference>
+    <Reference Include="Nancy.Owin">
+      <HintPath>..\packages\Nancy.Owin.1.2.0\lib\net40\Nancy.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Owin">
+      <HintPath>..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Topshelf">
+      <HintPath>..\packages\Topshelf.3.2.0\lib\net40-full\Topshelf.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Bootstrapper.cs" />
+    <Compile Include="Modules\HomeModule.cs" />
+    <Compile Include="Startup.cs" />
+    <Compile Include="WebServer.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <EmbeddedResource Include="content\js\components\jquery-mobile\jquery.mobile-1.4.5.min.map" />
+    <None Include="packages.config" />
+    <None Include="web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Tamlin.MCServer.Core\Tamlin.MCServer.Core.csproj">
+      <Project>{c417caa0-3b57-4e3d-8d5a-4f1d9c71131a}</Project>
+      <Name>Tamlin.MCServer.Core</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="content\js\components\jquery\jquery-1.11.3.min.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Views\Home\Index.html" />
+    <EmbeddedResource Include="Views\Shared\Master.html" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="content\js\components\jquery-mobile\images\ajax-loader.gif" />
+    <EmbeddedResource Include="content\js\components\jquery-mobile\images\icons-png\action-black.png" />
+    <EmbeddedResource Include="content\js\components\jquery-mobile\images\icons-png\action-white.png" />
+    <EmbeddedResource Include="content\js\components\jquery-mobile\images\icons-png\alert-black.png" />
+    <EmbeddedResource Include="content\js\components\jquery-mobile\images\icons-png\alert-white.png" />
+    <EmbeddedResource Include="content\js\components\jquery-mobile\images\icons-png\arrow-d-black.png" />
+    <EmbeddedResource Include="content\js\components\jquery-mobile\images\icons-png\arrow-d-l-black.png" />
+    <EmbeddedResource Include="content\js\components\jquery-mobile\images\icons-png\arrow-d-l-white.png" />
+    <EmbeddedResource Include="content\js\components\jquery-mobile\images\icons-png\arrow-d-r-black.png" />
+    <EmbeddedResource Include="content\js\components\jquery-mobile\images\icons-png\arrow-d-r-white.png" />
+    <EmbeddedResource Include="content\js\components\jquery-mobile\images\icons-png\arrow-d-white.png" />
+    <EmbeddedResource Include="content\js\components\jquery-mobile\images\icons-png\arrow-l-black.png" />
+    <EmbeddedResource Include="content\js\components\jquery-mobile\images\icons-png\arrow-l-white.png" />
+    <EmbeddedResource Include="content\js\components\jquery-mobile\images\icons-png\arrow-r-black.png" />
+    <EmbeddedResource Include="content\js\components\jquery-mobile\images\icons-png\arrow-r-white.png" />
+    <EmbeddedResource Include="content\js\components\jquery-mobile\images\icons-png\arrow-u-black.png" />
+    <EmbeddedResource Include="content\js\components\jquery-mobile\images\icons-png\arrow-u-l-black.png" />
+    <EmbeddedResource Include="content\js\components\jquery-mobile\images\icons-png\arrow-u-l-white.png" />
+    <EmbeddedResource Include="content\js\components\jquery-mobile\images\icons-png\arrow-u-r-black.png" />
+    <EmbeddedResource Include="content\js\components\jquery-mobile\images\icons-png\arrow-u-r-white.png" />
+    <EmbeddedResource Include="content\js\components\jquery-mobile\images\icons-png\arrow-u-white.png" />
+    <EmbeddedResource Include="content\js\components\jquery-mobile\images\icons-png\audio-black.png" />
+    <EmbeddedResource Include="content\js\components\jquery-mobile\images\icons-png\audio-white.png" />
+    <EmbeddedResource Include="content\js\components\jquery-mobile\images\icons-png\back-black.png" />
+    <EmbeddedResource Include="content\js\components\jquery-mobile\images\icons-png\back-white.png" />
+    <EmbeddedResource Include="content\js\components\jquery-mobile\images\icons-png\bars-black.png" />
+    <EmbeddedResource Include="content\js\components\jquery-mobile\images\icons-png\bars-white.png" />
+    <EmbeddedResource Include="content\js\components\jquery-mobile\images\icons-png\bullets-black.png" />
+    <EmbeddedResource Include="content\js\components\jquery-mobile\images\icons-png\bullets-white.png" />
+    <EmbeddedResource Include="content\js\components\jquery-mobile\images\icons-png\calendar-black.png" />
+    <EmbeddedResource Include="content\js\components\jquery-mobile\images\icons-png\calendar-white.png" />
+    <EmbeddedResource Include="content\js\components\jquery-mobile\images\icons-png\camera-black.png" />
+    <EmbeddedResource Include="content\js\components\jquery-mobile\images\icons-png\camera-white.png" />
+    <EmbeddedResource Include="content\js\components\jquery-mobile\images\icons-png\carat-d-black.png" />
+    <EmbeddedResource Include="content\js\components\jquery-mobile\images\icons-png\carat-d-white.png" />
+    <EmbeddedResource Include="content\js\components\jquery-mobile\images\icons-png\carat-l-black.png" />
+    <EmbeddedResource Include="content\js\components\jquery-mobile\images\icons-png\carat-l-white.png" />
+    <EmbeddedResource Include="content\js\components\jquery-mobile\images\icons-png\carat-r-black.png" />
+    <EmbeddedResource Include="content\js\components\jquery-mobile\images\icons-png\carat-r-white.png" />
+    <EmbeddedResource Include="content\js\components\jquery-mobile\images\icons-png\carat-u-black.png" />
+    <EmbeddedResource Include="content\js\components\jquery-mobile\images\icons-png\carat-u-white.png" />
+    <EmbeddedResource Include="content\js\components\jquery-mobile\images\icons-png\check-black.png" />
+    <EmbeddedResource Include="content\js\components\jquery-mobile\images\icons-png\check-white.png" />
+    <EmbeddedResource Include="content\js\components\jquery-mobile\images\icons-png\clock-black.png" />
+    <EmbeddedResource Include="content\js\components\jquery-mobile\images\icons-png\clock-white.png" />
+    <EmbeddedResource Include="content\js\components\jquery-mobile\images\icons-png\cloud-black.png" />
+    <EmbeddedResource Include="content\js\components\jquery-mobile\images\icons-png\cloud-white.png" />
+    <EmbeddedResource Include="content\js\components\jquery-mobile\images\icons-png\comment-black.png" />
+    <EmbeddedResource Include="content\js\components\jquery-mobile\images\icons-png\comment-white.png" />
+    <EmbeddedResource Include="content\js\components\jquery-mobile\images\icons-png\delete-black.png" />
+    <EmbeddedResource Include="content\js\components\jquery-mobile\images\icons-png\delete-white.png" />
+    <EmbeddedResource Include="content\js\components\jquery-mobile\images\icons-png\edit-black.png" />
+    <EmbeddedResource Include="content\js\components\jquery-mobile\images\icons-png\edit-white.png" />
+    <EmbeddedResource Include="content\js\components\jquery-mobile\images\icons-png\eye-black.png" />
+    <EmbeddedResource Include="content\js\components\jquery-mobile\images\icons-png\eye-white.png" />
+    <EmbeddedResource Include="content\js\components\jquery-mobile\images\icons-png\forbidden-black.png" />
+    <EmbeddedResource Include="content\js\components\jquery-mobile\images\icons-png\forbidden-white.png" />
+    <EmbeddedResource Include="content\js\components\jquery-mobile\images\icons-png\forward-black.png" />
+    <EmbeddedResource Include="content\js\components\jquery-mobile\images\icons-png\forward-white.png" />
+    <EmbeddedResource Include="content\js\components\jquery-mobile\images\icons-png\gear-black.png" />
+    <EmbeddedResource Include="content\js\components\jquery-mobile\images\icons-png\gear-white.png" />
+    <EmbeddedResource Include="content\js\components\jquery-mobile\images\icons-png\grid-black.png" />
+    <EmbeddedResource Include="content\js\components\jquery-mobile\images\icons-png\grid-white.png" />
+    <EmbeddedResource Include="content\js\components\jquery-mobile\images\icons-png\heart-black.png" />
+    <EmbeddedResource Include="content\js\components\jquery-mobile\images\icons-png\heart-white.png" />
+    <EmbeddedResource Include="content\js\components\jquery-mobile\images\icons-png\home-black.png" />
+    <EmbeddedResource Include="content\js\components\jquery-mobile\images\icons-png\home-white.png" />
+    <EmbeddedResource Include="content\js\components\jquery-mobile\images\icons-png\info-black.png" />
+    <EmbeddedResource Include="content\js\components\jquery-mobile\images\icons-png\info-white.png" />
+    <EmbeddedResource Include="content\js\components\jquery-mobile\images\icons-png\location-black.png" />
+    <EmbeddedResource Include="content\js\components\jquery-mobile\images\icons-png\location-white.png" />
+    <EmbeddedResource Include="content\js\components\jquery-mobile\images\icons-png\lock-black.png" />
+    <EmbeddedResource Include="content\js\components\jquery-mobile\images\icons-png\lock-white.png" />
+    <EmbeddedResource Include="content\js\components\jquery-mobile\images\icons-png\mail-black.png" />
+    <EmbeddedResource Include="content\js\components\jquery-mobile\images\icons-png\mail-white.png" />
+    <EmbeddedResource Include="content\js\components\jquery-mobile\images\icons-png\minus-black.png" />
+    <EmbeddedResource Include="content\js\components\jquery-mobile\images\icons-png\minus-white.png" />
+    <EmbeddedResource Include="content\js\components\jquery-mobile\images\icons-png\navigation-black.png" />
+    <EmbeddedResource Include="content\js\components\jquery-mobile\images\icons-png\navigation-white.png" />
+    <EmbeddedResource Include="content\js\components\jquery-mobile\images\icons-png\phone-black.png" />
+    <EmbeddedResource Include="content\js\components\jquery-mobile\images\icons-png\phone-white.png" />
+    <EmbeddedResource Include="content\js\components\jquery-mobile\images\icons-png\plus-black.png" />
+    <EmbeddedResource Include="content\js\components\jquery-mobile\images\icons-png\plus-white.png" />
+    <EmbeddedResource Include="content\js\components\jquery-mobile\images\icons-png\power-black.png" />
+    <EmbeddedResource Include="content\js\components\jquery-mobile\images\icons-png\power-white.png" />
+    <EmbeddedResource Include="content\js\components\jquery-mobile\images\icons-png\recycle-black.png" />
+    <EmbeddedResource Include="content\js\components\jquery-mobile\images\icons-png\recycle-white.png" />
+    <EmbeddedResource Include="content\js\components\jquery-mobile\images\icons-png\refresh-black.png" />
+    <EmbeddedResource Include="content\js\components\jquery-mobile\images\icons-png\refresh-white.png" />
+    <EmbeddedResource Include="content\js\components\jquery-mobile\images\icons-png\search-black.png" />
+    <EmbeddedResource Include="content\js\components\jquery-mobile\images\icons-png\search-white.png" />
+    <EmbeddedResource Include="content\js\components\jquery-mobile\images\icons-png\shop-black.png" />
+    <EmbeddedResource Include="content\js\components\jquery-mobile\images\icons-png\shop-white.png" />
+    <EmbeddedResource Include="content\js\components\jquery-mobile\images\icons-png\star-black.png" />
+    <EmbeddedResource Include="content\js\components\jquery-mobile\images\icons-png\star-white.png" />
+    <EmbeddedResource Include="content\js\components\jquery-mobile\images\icons-png\tag-black.png" />
+    <EmbeddedResource Include="content\js\components\jquery-mobile\images\icons-png\tag-white.png" />
+    <EmbeddedResource Include="content\js\components\jquery-mobile\images\icons-png\user-black.png" />
+    <EmbeddedResource Include="content\js\components\jquery-mobile\images\icons-png\user-white.png" />
+    <EmbeddedResource Include="content\js\components\jquery-mobile\images\icons-png\video-black.png" />
+    <EmbeddedResource Include="content\js\components\jquery-mobile\images\icons-png\video-white.png" />
+    <EmbeddedResource Include="content\js\components\jquery-mobile\images\icons-svg\action-black.svg" />
+    <EmbeddedResource Include="content\js\components\jquery-mobile\images\icons-svg\action-white.svg" />
+    <EmbeddedResource Include="content\js\components\jquery-mobile\images\icons-svg\alert-black.svg" />
+    <EmbeddedResource Include="content\js\components\jquery-mobile\images\icons-svg\alert-white.svg" />
+    <EmbeddedResource Include="content\js\components\jquery-mobile\images\icons-svg\arrow-d-black.svg" />
+    <EmbeddedResource Include="content\js\components\jquery-mobile\images\icons-svg\arrow-d-l-black.svg" />
+    <EmbeddedResource Include="content\js\components\jquery-mobile\images\icons-svg\arrow-d-l-white.svg" />
+    <EmbeddedResource Include="content\js\components\jquery-mobile\images\icons-svg\arrow-d-r-black.svg" />
+    <EmbeddedResource Include="content\js\components\jquery-mobile\images\icons-svg\arrow-d-r-white.svg" />
+    <EmbeddedResource Include="content\js\components\jquery-mobile\images\icons-svg\arrow-d-white.svg" />
+    <EmbeddedResource Include="content\js\components\jquery-mobile\images\icons-svg\arrow-l-black.svg" />
+    <EmbeddedResource Include="content\js\components\jquery-mobile\images\icons-svg\arrow-l-white.svg" />
+    <EmbeddedResource Include="content\js\components\jquery-mobile\images\icons-svg\arrow-r-black.svg" />
+    <EmbeddedResource Include="content\js\components\jquery-mobile\images\icons-svg\arrow-r-white.svg" />
+    <EmbeddedResource Include="content\js\components\jquery-mobile\images\icons-svg\arrow-u-black.svg" />
+    <EmbeddedResource Include="content\js\components\jquery-mobile\images\icons-svg\arrow-u-l-black.svg" />
+    <EmbeddedResource Include="content\js\components\jquery-mobile\images\icons-svg\arrow-u-l-white.svg" />
+    <EmbeddedResource Include="content\js\components\jquery-mobile\images\icons-svg\arrow-u-r-black.svg" />
+    <EmbeddedResource Include="content\js\components\jquery-mobile\images\icons-svg\arrow-u-r-white.svg" />
+    <EmbeddedResource Include="content\js\components\jquery-mobile\images\icons-svg\arrow-u-white.svg" />
+    <EmbeddedResource Include="content\js\components\jquery-mobile\images\icons-svg\audio-black.svg" />
+    <EmbeddedResource Include="content\js\components\jquery-mobile\images\icons-svg\audio-white.svg" />
+    <EmbeddedResource Include="content\js\components\jquery-mobile\images\icons-svg\back-black.svg" />
+    <EmbeddedResource Include="content\js\components\jquery-mobile\images\icons-svg\back-white.svg" />
+    <EmbeddedResource Include="content\js\components\jquery-mobile\images\icons-svg\bars-black.svg" />
+    <EmbeddedResource Include="content\js\components\jquery-mobile\images\icons-svg\bars-white.svg" />
+    <EmbeddedResource Include="content\js\components\jquery-mobile\images\icons-svg\bullets-black.svg" />
+    <EmbeddedResource Include="content\js\components\jquery-mobile\images\icons-svg\bullets-white.svg" />
+    <EmbeddedResource Include="content\js\components\jquery-mobile\images\icons-svg\calendar-black.svg" />
+    <EmbeddedResource Include="content\js\components\jquery-mobile\images\icons-svg\calendar-white.svg" />
+    <EmbeddedResource Include="content\js\components\jquery-mobile\images\icons-svg\camera-black.svg" />
+    <EmbeddedResource Include="content\js\components\jquery-mobile\images\icons-svg\camera-white.svg" />
+    <EmbeddedResource Include="content\js\components\jquery-mobile\images\icons-svg\carat-d-black.svg" />
+    <EmbeddedResource Include="content\js\components\jquery-mobile\images\icons-svg\carat-d-white.svg" />
+    <EmbeddedResource Include="content\js\components\jquery-mobile\images\icons-svg\carat-l-black.svg" />
+    <EmbeddedResource Include="content\js\components\jquery-mobile\images\icons-svg\carat-l-white.svg" />
+    <EmbeddedResource Include="content\js\components\jquery-mobile\images\icons-svg\carat-r-black.svg" />
+    <EmbeddedResource Include="content\js\components\jquery-mobile\images\icons-svg\carat-r-white.svg" />
+    <EmbeddedResource Include="content\js\components\jquery-mobile\images\icons-svg\carat-u-black.svg" />
+    <EmbeddedResource Include="content\js\components\jquery-mobile\images\icons-svg\carat-u-white.svg" />
+    <EmbeddedResource Include="content\js\components\jquery-mobile\images\icons-svg\check-black.svg" />
+    <EmbeddedResource Include="content\js\components\jquery-mobile\images\icons-svg\check-white.svg" />
+    <EmbeddedResource Include="content\js\components\jquery-mobile\images\icons-svg\clock-black.svg" />
+    <EmbeddedResource Include="content\js\components\jquery-mobile\images\icons-svg\clock-white.svg" />
+    <EmbeddedResource Include="content\js\components\jquery-mobile\images\icons-svg\cloud-black.svg" />
+    <EmbeddedResource Include="content\js\components\jquery-mobile\images\icons-svg\cloud-white.svg" />
+    <EmbeddedResource Include="content\js\components\jquery-mobile\images\icons-svg\comment-black.svg" />
+    <EmbeddedResource Include="content\js\components\jquery-mobile\images\icons-svg\comment-white.svg" />
+    <EmbeddedResource Include="content\js\components\jquery-mobile\images\icons-svg\delete-black.svg" />
+    <EmbeddedResource Include="content\js\components\jquery-mobile\images\icons-svg\delete-white.svg" />
+    <EmbeddedResource Include="content\js\components\jquery-mobile\images\icons-svg\edit-black.svg" />
+    <EmbeddedResource Include="content\js\components\jquery-mobile\images\icons-svg\edit-white.svg" />
+    <EmbeddedResource Include="content\js\components\jquery-mobile\images\icons-svg\eye-black.svg" />
+    <EmbeddedResource Include="content\js\components\jquery-mobile\images\icons-svg\eye-white.svg" />
+    <EmbeddedResource Include="content\js\components\jquery-mobile\images\icons-svg\forbidden-black.svg" />
+    <EmbeddedResource Include="content\js\components\jquery-mobile\images\icons-svg\forbidden-white.svg" />
+    <EmbeddedResource Include="content\js\components\jquery-mobile\images\icons-svg\forward-black.svg" />
+    <EmbeddedResource Include="content\js\components\jquery-mobile\images\icons-svg\forward-white.svg" />
+    <EmbeddedResource Include="content\js\components\jquery-mobile\images\icons-svg\gear-black.svg" />
+    <EmbeddedResource Include="content\js\components\jquery-mobile\images\icons-svg\gear-white.svg" />
+    <EmbeddedResource Include="content\js\components\jquery-mobile\images\icons-svg\grid-black.svg" />
+    <EmbeddedResource Include="content\js\components\jquery-mobile\images\icons-svg\grid-white.svg" />
+    <EmbeddedResource Include="content\js\components\jquery-mobile\images\icons-svg\heart-black.svg" />
+    <EmbeddedResource Include="content\js\components\jquery-mobile\images\icons-svg\heart-white.svg" />
+    <EmbeddedResource Include="content\js\components\jquery-mobile\images\icons-svg\home-black.svg" />
+    <EmbeddedResource Include="content\js\components\jquery-mobile\images\icons-svg\home-white.svg" />
+    <EmbeddedResource Include="content\js\components\jquery-mobile\images\icons-svg\info-black.svg" />
+    <EmbeddedResource Include="content\js\components\jquery-mobile\images\icons-svg\info-white.svg" />
+    <EmbeddedResource Include="content\js\components\jquery-mobile\images\icons-svg\location-black.svg" />
+    <EmbeddedResource Include="content\js\components\jquery-mobile\images\icons-svg\location-white.svg" />
+    <EmbeddedResource Include="content\js\components\jquery-mobile\images\icons-svg\lock-black.svg" />
+    <EmbeddedResource Include="content\js\components\jquery-mobile\images\icons-svg\lock-white.svg" />
+    <EmbeddedResource Include="content\js\components\jquery-mobile\images\icons-svg\mail-black.svg" />
+    <EmbeddedResource Include="content\js\components\jquery-mobile\images\icons-svg\mail-white.svg" />
+    <EmbeddedResource Include="content\js\components\jquery-mobile\images\icons-svg\minus-black.svg" />
+    <EmbeddedResource Include="content\js\components\jquery-mobile\images\icons-svg\minus-white.svg" />
+    <EmbeddedResource Include="content\js\components\jquery-mobile\images\icons-svg\navigation-black.svg" />
+    <EmbeddedResource Include="content\js\components\jquery-mobile\images\icons-svg\navigation-white.svg" />
+    <EmbeddedResource Include="content\js\components\jquery-mobile\images\icons-svg\phone-black.svg" />
+    <EmbeddedResource Include="content\js\components\jquery-mobile\images\icons-svg\phone-white.svg" />
+    <EmbeddedResource Include="content\js\components\jquery-mobile\images\icons-svg\plus-black.svg" />
+    <EmbeddedResource Include="content\js\components\jquery-mobile\images\icons-svg\plus-white.svg" />
+    <EmbeddedResource Include="content\js\components\jquery-mobile\images\icons-svg\power-black.svg" />
+    <EmbeddedResource Include="content\js\components\jquery-mobile\images\icons-svg\power-white.svg" />
+    <EmbeddedResource Include="content\js\components\jquery-mobile\images\icons-svg\recycle-black.svg" />
+    <EmbeddedResource Include="content\js\components\jquery-mobile\images\icons-svg\recycle-white.svg" />
+    <EmbeddedResource Include="content\js\components\jquery-mobile\images\icons-svg\refresh-black.svg" />
+    <EmbeddedResource Include="content\js\components\jquery-mobile\images\icons-svg\refresh-white.svg" />
+    <EmbeddedResource Include="content\js\components\jquery-mobile\images\icons-svg\search-black.svg" />
+    <EmbeddedResource Include="content\js\components\jquery-mobile\images\icons-svg\search-white.svg" />
+    <EmbeddedResource Include="content\js\components\jquery-mobile\images\icons-svg\shop-black.svg" />
+    <EmbeddedResource Include="content\js\components\jquery-mobile\images\icons-svg\shop-white.svg" />
+    <EmbeddedResource Include="content\js\components\jquery-mobile\images\icons-svg\star-black.svg" />
+    <EmbeddedResource Include="content\js\components\jquery-mobile\images\icons-svg\star-white.svg" />
+    <EmbeddedResource Include="content\js\components\jquery-mobile\images\icons-svg\tag-black.svg" />
+    <EmbeddedResource Include="content\js\components\jquery-mobile\images\icons-svg\tag-white.svg" />
+    <EmbeddedResource Include="content\js\components\jquery-mobile\images\icons-svg\user-black.svg" />
+    <EmbeddedResource Include="content\js\components\jquery-mobile\images\icons-svg\user-white.svg" />
+    <EmbeddedResource Include="content\js\components\jquery-mobile\images\icons-svg\video-black.svg" />
+    <EmbeddedResource Include="content\js\components\jquery-mobile\images\icons-svg\video-white.svg" />
+    <EmbeddedResource Include="content\js\components\jquery-mobile\jquery.mobile-1.4.5.min.css" />
+    <EmbeddedResource Include="content\js\components\jquery-mobile\jquery.mobile-1.4.5.min.js" />
+    <EmbeddedResource Include="content\js\components\jquery-mobile\jquery.mobile.external-png-1.4.5.min.css" />
+    <EmbeddedResource Include="content\js\components\jquery-mobile\jquery.mobile.icons-1.4.5.min.css" />
+    <EmbeddedResource Include="content\js\components\jquery-mobile\jquery.mobile.inline-png-1.4.5.min.css" />
+    <EmbeddedResource Include="content\js\components\jquery-mobile\jquery.mobile.inline-svg-1.4.5.min.css" />
+    <EmbeddedResource Include="content\js\components\jquery-mobile\jquery.mobile.structure-1.4.5.min.css" />
+    <EmbeddedResource Include="content\js\components\jquery-mobile\jquery.mobile.theme-1.4.5.min.css" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

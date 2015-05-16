@@ -1,0 +1,53 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>MC Web</title>
+    <link rel="stylesheet" href="/content/js/components/jquery-mobile/jquery.mobile-1.4.5.min.css">
+    <script src="/content/js/components/jquery/jquery-1.11.3.min.js"></script>
+    <script src="/content/js/components/jquery-mobile/jquery.mobile-1.4.5.min.js"></script>
+</head>
+<body>
+    @Section['Content'];
+    <script>
+			@Section['Scripts']
+
+            /*
+			ko.bindingHandlers.date = {
+				update: function(element, valueAccessor) {
+					$(element).html(moment(valueAccessor()).fromNow());
+				}
+			};
+
+			ko.bindingHandlers.highlight = {
+				update: function (element, valueAccessor) {
+					var value = ko.utils.unwrapObservable(valueAccessor()) || '';
+					$(element).html(value);
+					$(element).children('pre, code').each(function() {
+						hljs.highlightBlock(this)
+					});
+				}
+			};
+
+			ko.bindingHandlers.masonry = {
+				update: function(element, valueAccessor, allBindingsAccessor) {
+					var $element = $(element),
+						list = ko.utils.unwrapObservable(allBindingsAccessor().foreach)
+						masonry = ko.utils.unwrapObservable(valueAccessor())
+
+					if ($element.data('masonry'))
+						$element.masonry('destroy')
+
+					if (!list.length)
+						return
+
+					$element.masonry(masonry)
+				}
+			}
+         */
+
+    </script>
+
+</body>
+</html>
