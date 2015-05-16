@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Autofac;
+using BrockAllen.MembershipReboot;
 using Nancy;
 using Nancy.Bootstrapper;
 using Nancy.Bootstrappers.Autofac;
@@ -12,11 +13,18 @@ using Nancy.Conventions;
 using Nancy.Responses;
 using Nancy.ViewEngines;
 using Nancy.ViewEngines.Razor;
+using Tamlin.MembershipReboot;
 
-namespace Tamlin.MCServer.Web
+namespace Tamlin.MCServer.Web.Configuration
 {
-    public class Bootstrapper : AutofacNancyBootstrapper
+    internal class Bootstrapper : AutofacNancyBootstrapper
     {
+        private readonly MembershipRebootConfiguration _membershipRebootConfig;
+        internal Bootstrapper(MembershipRebootConfiguration membershipRebootConfig)
+        {
+            _membershipRebootConfig = membershipRebootConfig;
+        }
+
         protected override NancyInternalConfiguration InternalConfiguration
         {
             get
@@ -24,11 +32,6 @@ namespace Tamlin.MCServer.Web
                 return NancyInternalConfiguration.WithOverrides(with => with.ViewLocationProvider = typeof(ResourceViewLocationProvider));
             }
         }
-
-        //protected override ILifetimeScope GetApplicationContainer()
-        //{
-        //    // Return application container instance
-        //}
 
         protected override void ApplicationStartup(ILifetimeScope container, IPipelines pipelines)
         {
@@ -38,16 +41,21 @@ namespace Tamlin.MCServer.Web
 
         protected override void ConfigureApplicationContainer(ILifetimeScope existingContainer)
         {
-            base.ConfigureApplicationContainer(existingContainer);
-
-            //ResourceViewLocationProvider
-            //    .RootNamespaces
-            //    .Add(GetType().Assembly, "Tamlin.MCServer.Web.Views");
+            // Perform registration that should have an application lifetime
+            var builder = new ContainerBuilder();
+            builder.RegisterInstance(_membershipRebootConfig).SingleInstance();
+            builder.Update(existingContainer.ComponentRegistry);
         }
 
         protected override void ConfigureRequestContainer(ILifetimeScope container, NancyContext context)
         {
             // Perform registrations that should have a request lifetime
+            var builder = new ContainerBuilder();
+
+            builder.RegisterType<UserAccountService>().SingleInstance();
+            builder.RegisterType<McUserAccountRepository>().As<IUserAccountRepository>().SingleInstance();
+
+            builder.Update(container.ComponentRegistry);
         }
 
         protected override void RequestStartup(ILifetimeScope container, IPipelines pipelines, NancyContext context)

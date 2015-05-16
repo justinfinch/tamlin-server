@@ -9,6 +9,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tamlin.MCServer.Web", "Taml
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tamlin.MCServer.Core", "Tamlin.MCServer.Core\Tamlin.MCServer.Core.csproj", "{C417CAA0-3B57-4E3D-8D5A-4F1D9C71131A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tamlin.MembershipReboot", "Tamlin.MembershipReboot\Tamlin.MembershipReboot.csproj", "{0BB959AF-527E-4CD4-9E21-9B5BF34DCA06}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{29377945-A385-4491-B02D-6B628181B691}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,8 +31,16 @@ Global
 		{C417CAA0-3B57-4E3D-8D5A-4F1D9C71131A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C417CAA0-3B57-4E3D-8D5A-4F1D9C71131A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C417CAA0-3B57-4E3D-8D5A-4F1D9C71131A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0BB959AF-527E-4CD4-9E21-9B5BF34DCA06}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0BB959AF-527E-4CD4-9E21-9B5BF34DCA06}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0BB959AF-527E-4CD4-9E21-9B5BF34DCA06}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0BB959AF-527E-4CD4-9E21-9B5BF34DCA06}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{C417CAA0-3B57-4E3D-8D5A-4F1D9C71131A} = {29377945-A385-4491-B02D-6B628181B691}
+		{0BB959AF-527E-4CD4-9E21-9B5BF34DCA06} = {29377945-A385-4491-B02D-6B628181B691}
 	EndGlobalSection
 EndGlobal

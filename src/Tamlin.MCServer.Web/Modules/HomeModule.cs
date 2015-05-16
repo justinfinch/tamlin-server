@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Nancy;
+using Nancy.Security;
 
 namespace Tamlin.MCServer.Web.Modules
 {
@@ -12,6 +13,8 @@ namespace Tamlin.MCServer.Web.Modules
     {
         public HomeModule()
         {
+            this.RequiresAuthentication();
+
             Get["/"] = parameters =>
             {
                 dynamic test = new ExpandoObject();
