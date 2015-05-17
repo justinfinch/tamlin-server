@@ -82,6 +82,7 @@
   <ItemGroup>
     <Compile Include="Configuration\Bootstrapper.cs" />
     <Compile Include="Configuration\MembershipRebootConfig.cs" />
+    <Compile Include="Configuration\WebServerOptions.cs" />
     <Compile Include="Modules\HomeModule.cs" />
     <Compile Include="Modules\LoginModule.cs" />
     <Compile Include="Startup.cs" />

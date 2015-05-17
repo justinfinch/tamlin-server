@@ -1,12 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 using MCServer.Core.Logging;
 using MCServer.Core.Logging.NLog;
 using Microsoft.Owin.Hosting;
 using Topshelf;
+using System.Linq;
+using System.Net.Sockets;
 
 namespace Tamlin.MCServer.Web
 {
@@ -24,7 +27,7 @@ namespace Tamlin.MCServer.Web
         {
             _logger.Info("Web Server starting");
 
-            StartWebServer();
+            StartWebServer(8080);
 
             return true;
         }
@@ -37,15 +40,30 @@ namespace Tamlin.MCServer.Web
             return true;
         }
 
-        private void StartWebServer()
+        private void StartWebServer(int port)
         {
+            var httpUrlFormat = "http://{0}:{1}";
             var startOptions = new StartOptions();
-            startOptions.Urls.Add("http://localhost:8080");
-            startOptions.Urls.Add("http://127.0.0.1:8080");
-            startOptions.Urls.Add("http://192.168.1.70:8080");
+            //TODO: Add port and host headers to configuration
+            startOptions.Urls.Add(String.Format(httpUrlFormat, "localhost", port));
+            startOptions.Urls.Add(String.Format(httpUrlFormat, Environment.MachineName, port));
 
+            var ipHostHeaders = Dns.GetHostEntry(Dns.GetHostName()).AddressList
+                .Where(ip => ip.AddressFamily == AddressFamily.InterNetwork)
+                .Select(ip => String.Format(httpUrlFormat, ip.ToString(), port));
+
+            foreach(var ipHostHeader in ipHostHeaders)
+            {
+                startOptions.Urls.Add(ipHostHeader);
+            }
+            
             _webApp = WebApp.Start<Startup>(startOptions);
+
             _logger.Info("Web server started");
+            foreach(var url in startOptions.Urls)
+            {
+                _logger.Info(string.Format("Web server listening on => {0}", url));
+            }
             
         }
     }

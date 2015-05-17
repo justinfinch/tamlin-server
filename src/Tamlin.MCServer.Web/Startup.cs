@@ -22,7 +22,7 @@ namespace Tamlin.MCServer.Web
         {
             var cookieOptions = new CookieAuthenticationOptions
             {
-                AuthenticationType = "ApplicationCookie",
+                AuthenticationType = MembershipRebootOwinConstants.AuthenticationType,
                 LoginPath = new PathString("/Login")
             };
 
