@@ -9,12 +9,13 @@ using Nancy.ModelBinding;
 using Nancy.Responses;
 using Nancy.Extensions;
 using Nancy.Authentication.Forms;
+using Tamlin.MCServer.Data.Users;
 
 namespace Tamlin.MCServer.Web.Modules
 {
     public class LoginModule : NancyModule
     {
-        public LoginModule()
+        public LoginModule(IUserRepo userRepo)
         {
 
             Get["/login"] = parameters =>
@@ -26,8 +27,9 @@ namespace Tamlin.MCServer.Web.Modules
             {
                 var model = this.Bind<LoginModel>();
 
-                //TODO: Get the user from the databae and actually compare the passwords
-                if(model.UserName == "justin" && model.Password == "finch")
+                var user = userRepo.GetByUsername(model.UserName);
+
+                if(user != null && user.cpassword.Trim() == model.Password)
                 {
                     return this.LoginAndRedirect(Guid.NewGuid(), fallbackRedirectUrl: "/");
                 }
@@ -37,27 +39,6 @@ namespace Tamlin.MCServer.Web.Modules
                 }
 
                 return View["index", model];
-
-                //UserAccount account;
-                //if (userAccountService.AuthenticateWithUsernameOrEmail(model.UserName, model.Password, out account))
-                //{
-                //    authService.SignIn(account, false);
-
-                //    string returnUrl = parameters.ReturnUrl;
-                //    if (Context.IsLocalUrl(returnUrl))
-                //    {
-                //        return Response.AsRedirect(returnUrl);
-                //    }
-
-                //    return Response.AsRedirect("/");
-                //}
-                //else
-                //{
-                //    
-                //}
-
-
-                
             };
 
             Get["/logout"] = parameters =>

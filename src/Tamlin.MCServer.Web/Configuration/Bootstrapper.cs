@@ -16,6 +16,10 @@ using Nancy.ViewEngines.Razor;
 using Nancy.Owin;
 using Nancy.Authentication.Forms;
 using Tamlin.MCServer.Web.Security;
+using System.Data;
+using System.Data.SqlClient;
+using System.Configuration;
+using Tamlin.MCServer.Data.Users;
 
 namespace Tamlin.MCServer.Web.Configuration
 {
@@ -55,14 +59,22 @@ namespace Tamlin.MCServer.Web.Configuration
             var builder = new ContainerBuilder();
 
             builder.RegisterType<DefaultUserMapper>().As<IUserMapper>().SingleInstance();
+            builder.RegisterType<UserRepo>().As<IUserRepo>().SingleInstance();
 
             builder.Register(ctx => 
-            {
-                var env = context.GetOwinEnvironment() ?? new Dictionary<string, object>();
-                return new OwinContext(env);
+                {
+                    var env = context.GetOwinEnvironment() ?? new Dictionary<string, object>();
+                    return new OwinContext(env);
 
-            })
+                })
             .As<IOwinContext>()
+            .SingleInstance();
+
+            builder.Register(ctx =>
+                {
+                    return new SqlConnection(ConfigurationManager.ConnectionStrings["mcnfb"].ConnectionString);
+                })
+            .As<IDbConnection>()
             .SingleInstance();
 
             builder.Update(container.ComponentRegistry);

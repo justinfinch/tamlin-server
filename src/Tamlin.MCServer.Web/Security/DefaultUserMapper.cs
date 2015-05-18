@@ -6,11 +6,19 @@ using System.Threading.Tasks;
 using Nancy;
 using Nancy.Authentication.Forms;
 using Nancy.Security;
+using Tamlin.MCServer.Data.Users;
 
 namespace Tamlin.MCServer.Web.Security
 {
     public class DefaultUserMapper : IUserMapper
     {
+        private readonly IUserRepo _userRepo;
+
+        public DefaultUserMapper(IUserRepo userRepo)
+        {
+            _userRepo = userRepo;
+        }
+
         public IUserIdentity GetUserFromIdentifier(Guid identifier, NancyContext context)
         {
             

@@ -59,6 +59,7 @@
       <HintPath>..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.IdentityModel" />
     <Reference Include="System.Xml.Linq" />
@@ -90,9 +91,21 @@
     <None Include="web.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Tamlin.MCServer.Business\Tamlin.MCServer.Business.csproj">
+      <Project>{73aaf963-caaa-4951-ab2c-d161b1d4fb22}</Project>
+      <Name>Tamlin.MCServer.Business</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Tamlin.MCServer.Core\Tamlin.MCServer.Core.csproj">
       <Project>{c417caa0-3b57-4e3d-8d5a-4f1d9c71131a}</Project>
       <Name>Tamlin.MCServer.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Tamlin.MCServer.Data\Tamlin.MCServer.Data.csproj">
+      <Project>{1e2eab0f-64be-48ba-80f6-5c3795de28ab}</Project>
+      <Name>Tamlin.MCServer.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Tamlin.MCServer.Domain\Tamlin.MCServer.Domain.csproj">
+      <Project>{03ecd1ab-534e-4bf1-854d-acc486ad65a4}</Project>
+      <Name>Tamlin.MCServer.Domain</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
