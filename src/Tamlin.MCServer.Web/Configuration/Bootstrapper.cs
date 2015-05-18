@@ -20,6 +20,7 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Configuration;
 using Tamlin.MCServer.Data.Users;
+using Tamlin.MCServer.Business.Security;
 
 namespace Tamlin.MCServer.Web.Configuration
 {
@@ -50,6 +51,8 @@ namespace Tamlin.MCServer.Web.Configuration
         {
             // Perform registration that should have an application lifetime
             var builder = new ContainerBuilder();
+
+            builder.RegisterType<InMemoryUserCache>().As<IUserCache>().SingleInstance();
 
             builder.Update(existingContainer.ComponentRegistry);
         }

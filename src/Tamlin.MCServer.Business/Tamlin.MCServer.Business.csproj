@@ -41,6 +41,14 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Security\InMemoryUserCache.cs" />
+    <Compile Include="Security\IUserCache.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Tamlin.MCServer.Domain\Tamlin.MCServer.Domain.csproj">
+      <Project>{03ecd1ab-534e-4bf1-854d-acc486ad65a4}</Project>
+      <Name>Tamlin.MCServer.Domain</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

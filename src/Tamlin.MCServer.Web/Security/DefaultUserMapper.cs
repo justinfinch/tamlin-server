@@ -6,25 +6,28 @@ using System.Threading.Tasks;
 using Nancy;
 using Nancy.Authentication.Forms;
 using Nancy.Security;
-using Tamlin.MCServer.Data.Users;
+using Tamlin.MCServer.Business.Security;
 
 namespace Tamlin.MCServer.Web.Security
 {
     public class DefaultUserMapper : IUserMapper
     {
-        private readonly IUserRepo _userRepo;
+        private readonly IUserCache _userCache;
 
-        public DefaultUserMapper(IUserRepo userRepo)
+        public DefaultUserMapper(IUserCache userCache)
         {
-            _userRepo = userRepo;
+            _userCache = userCache;
         }
 
         public IUserIdentity GetUserFromIdentifier(Guid identifier, NancyContext context)
         {
-            
+            var user = _userCache.Get(identifier);
+            if (user == null)
+                return null;
+
             return new AuthenticatedUser()
             {
-                UserName = "justin"
+                UserName = user.cuserid
             };
         }
     }

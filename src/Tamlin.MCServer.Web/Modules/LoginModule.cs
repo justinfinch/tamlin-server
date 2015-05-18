@@ -10,14 +10,14 @@ using Nancy.Responses;
 using Nancy.Extensions;
 using Nancy.Authentication.Forms;
 using Tamlin.MCServer.Data.Users;
+using Tamlin.MCServer.Business.Security;
 
 namespace Tamlin.MCServer.Web.Modules
 {
     public class LoginModule : NancyModule
     {
-        public LoginModule(IUserRepo userRepo)
+        public LoginModule(IUserRepo userRepo, IUserCache userCache)
         {
-
             Get["/login"] = parameters =>
             {
                 return View["index", new LoginModel()];
@@ -31,7 +31,8 @@ namespace Tamlin.MCServer.Web.Modules
 
                 if(user != null && user.cpassword.Trim() == model.Password)
                 {
-                    return this.LoginAndRedirect(Guid.NewGuid(), fallbackRedirectUrl: "/");
+                    var userCacheKey = userCache.Add(user);
+                    return this.LoginAndRedirect(userCacheKey, fallbackRedirectUrl: "/");
                 }
                 else
                 {
