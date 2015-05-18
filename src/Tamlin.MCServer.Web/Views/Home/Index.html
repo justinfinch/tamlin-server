@@ -1,21 +1,41 @@
-﻿@Master['shared/master.html']
+﻿@Master['shared/securelayout.html']
 
-@Section['Content']
-<div data-role="page">
-    <div data-role="header">
-        <h1>Welcome To My Homepage</h1>
-    </div>
+@Section['Page']
+<div data-role="header">
+    <h1>Home</h1>
+    <a href="#" data-icon="gear" class="ui-btn-right">Options</a>
+</div>
 
-    <div data-role="main" class="ui-content">
-        <p>@Model.Name is Now A Mobile Developer!!</p>
-    </div>
+<div data-role="main" class="ui-content">
+    <form action="login" method="post">
+        <!--Warehouse-->
+        <label for="warehouse">Warehouse</label>
+        <input type="text" name="warehouse" id="warehouse" value="" />
 
-    <div data-role="footer">
-        <h1>Footer Text</h1>
+        <!--Station-->
+        <label for="station">Station</label>
+        <input type="text" name="station" id="station" value="" />
+
+        <!--Batch Number-->
+        <label for="batchNum">Batch #</label>
+        <input type="number" name="batchNum" id="batchNum" value="" />
+
+        <!--Qty-->
+        <label for="quantity">Quantity</label>
+        <input type="number" name="quantity" id="quantity" value="" />
+
+        <input type="submit" class="ui-button ui-corner-all" data-theme="b" value="Start Job">
+    </form>
+</div>
+
+<div data-role="footer" data-position="fixed">
+    <div data-role="navbar">
+        <ul>
+            <li><a href="#" data-icon="grid">Summary</a></li>
+            <li><a href="#" data-icon="star" class="ui-btn-active">Favs</a></li>
+            <li><a href="#" data-icon="gear">Setup</a></li>
+        </ul>
     </div>
 </div>
-@EndSection
-
-@Section['Scripts]
 
 @EndSection

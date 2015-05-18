@@ -17,9 +17,10 @@ namespace Tamlin.MCServer.Web.Modules
 
             Get["/"] = parameters =>
             {
+                var user = this.Context.CurrentUser;
+
                 dynamic test = new ExpandoObject();
-                test.Name = "Justin";
-                test.Last = "finch";
+                test.Name = user.UserName;
                 return View["index", test];
             };
         }

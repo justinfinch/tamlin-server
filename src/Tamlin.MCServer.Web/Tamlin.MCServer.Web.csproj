@@ -34,12 +34,6 @@
     <Reference Include="Autofac">
       <HintPath>..\packages\Autofac.3.5.2\lib\net40\Autofac.dll</HintPath>
     </Reference>
-    <Reference Include="BrockAllen.MembershipReboot">
-      <HintPath>..\packages\BrockAllen.MembershipReboot.8.3.0\lib\net45\BrockAllen.MembershipReboot.dll</HintPath>
-    </Reference>
-    <Reference Include="BrockAllen.MembershipReboot.Owin">
-      <HintPath>..\packages\BrockAllen.MembershipReboot.Owin.7.1.0\lib\net45\BrockAllen.MembershipReboot.Owin.dll</HintPath>
-    </Reference>
     <Reference Include="Microsoft.Owin">
       <HintPath>..\packages\Microsoft.Owin.3.0.1\lib\net45\Microsoft.Owin.dll</HintPath>
     </Reference>
@@ -49,14 +43,11 @@
     <Reference Include="Microsoft.Owin.Hosting">
       <HintPath>..\packages\Microsoft.Owin.Hosting.3.0.1\lib\net45\Microsoft.Owin.Hosting.dll</HintPath>
     </Reference>
-    <Reference Include="Microsoft.Owin.Security">
-      <HintPath>..\packages\Microsoft.Owin.Security.2.1.0\lib\net45\Microsoft.Owin.Security.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.Owin.Security.Cookies">
-      <HintPath>..\packages\Microsoft.Owin.Security.Cookies.2.1.0\lib\net45\Microsoft.Owin.Security.Cookies.dll</HintPath>
-    </Reference>
     <Reference Include="Nancy">
       <HintPath>..\packages\Nancy.1.2.0\lib\net40\Nancy.dll</HintPath>
+    </Reference>
+    <Reference Include="Nancy.Authentication.Forms">
+      <HintPath>..\packages\Nancy.Authentication.Forms.1.2.0\lib\net40\Nancy.Authentication.Forms.dll</HintPath>
     </Reference>
     <Reference Include="Nancy.Bootstrappers.Autofac">
       <HintPath>..\packages\Nancy.Bootstrappers.Autofac.1.2.0\lib\net40\Nancy.Bootstrappers.Autofac.dll</HintPath>
@@ -81,10 +72,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Configuration\Bootstrapper.cs" />
-    <Compile Include="Configuration\MembershipRebootConfig.cs" />
     <Compile Include="Configuration\WebServerOptions.cs" />
+    <Compile Include="Models\LoginModel.cs" />
+    <Compile Include="Models\ViewModel.cs" />
     <Compile Include="Modules\HomeModule.cs" />
     <Compile Include="Modules\LoginModule.cs" />
+    <Compile Include="Security\AuthenticatedUser.cs" />
+    <Compile Include="Security\DefaultUserMapper.cs" />
     <Compile Include="Startup.cs" />
     <Compile Include="WebServer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -99,10 +93,6 @@
     <ProjectReference Include="..\Tamlin.MCServer.Core\Tamlin.MCServer.Core.csproj">
       <Project>{c417caa0-3b57-4e3d-8d5a-4f1d9c71131a}</Project>
       <Name>Tamlin.MCServer.Core</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Tamlin.MembershipReboot\Tamlin.MembershipReboot.csproj">
-      <Project>{0bb959af-527e-4cd4-9e21-9b5bf34dca06}</Project>
-      <Name>Tamlin.MembershipReboot</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
@@ -327,7 +317,7 @@
     <EmbeddedResource Include="Views\Login\Index.html" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Middleware\" />
+    <EmbeddedResource Include="Views\Shared\SecureLayout.html" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>

@@ -5,8 +5,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Autofac;
-using BrockAllen.MembershipReboot;
-using BrockAllen.MembershipReboot.Owin;
 using Microsoft.Owin;
 using Nancy;
 using Nancy.Bootstrapper;
@@ -15,20 +13,14 @@ using Nancy.Conventions;
 using Nancy.Responses;
 using Nancy.ViewEngines;
 using Nancy.ViewEngines.Razor;
-using Tamlin.MembershipReboot;
 using Nancy.Owin;
+using Nancy.Authentication.Forms;
+using Tamlin.MCServer.Web.Security;
 
 namespace Tamlin.MCServer.Web.Configuration
 {
     internal class Bootstrapper : AutofacNancyBootstrapper
     {
-        private readonly MembershipRebootConfiguration _membershipRebootConfig;
-
-        internal Bootstrapper(MembershipRebootConfiguration membershipRebootConfig)
-        {
-            _membershipRebootConfig = membershipRebootConfig;
-        }
-
         protected override NancyInternalConfiguration InternalConfiguration
         {
             get
@@ -37,12 +29,23 @@ namespace Tamlin.MCServer.Web.Configuration
             }
         }
 
+        protected override void RequestStartup(ILifetimeScope container, IPipelines pipelines, NancyContext context)
+        {
+            base.RequestStartup(container, pipelines, context);
+
+            var formsAuthConfiguration = new FormsAuthenticationConfiguration
+            {
+                RedirectUrl = "~/login",
+                UserMapper = container.Resolve<IUserMapper>(),
+            };
+
+            FormsAuthentication.Enable(pipelines, formsAuthConfiguration);
+        }
+
         protected override void ConfigureApplicationContainer(ILifetimeScope existingContainer)
         {
             // Perform registration that should have an application lifetime
             var builder = new ContainerBuilder();
-
-            builder.RegisterInstance(_membershipRebootConfig).SingleInstance();
 
             builder.Update(existingContainer.ComponentRegistry);
         }
@@ -51,15 +54,7 @@ namespace Tamlin.MCServer.Web.Configuration
         {
             var builder = new ContainerBuilder();
 
-            builder.RegisterType<UserAccountService>().InstancePerLifetimeScope();
-            builder.RegisterType<McUserAccountRepository>().As<IUserAccountRepository>().SingleInstance();
-            builder.Register(ctx =>
-            {
-                var owin = ctx.Resolve<IOwinContext>();
-                return new OwinAuthenticationService(MembershipRebootOwinConstants.AuthenticationType, ctx.Resolve<UserAccountService>(), owin.Environment);
-            })
-            .As<AuthenticationService>()
-            .SingleInstance();
+            builder.RegisterType<DefaultUserMapper>().As<IUserMapper>().SingleInstance();
 
             builder.Register(ctx => 
             {

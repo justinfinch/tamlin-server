@@ -3,15 +3,22 @@
 @Section['Content']
 <div data-role="page">
     <div data-role="header">
-        <h1>Login</h1>
+        <h1>MC Mobile - Please Login</h1>
     </div>
-
     <div data-role="main" class="ui-content">
-        <p>Please login</p>
-    </div>
+        <form action="login" method="post">
+            <!--User Name-->
+            <label for="username">User Name</label>
+            <input type="text" name="username" id="username" value="" />
 
-    <div data-role="footer">
-        <h1>Footer Text</h1>
+            <!--Password-->
+            <label for="password">Password</label>
+            <input type="password" name="password" id="password" value="" />
+
+            <p>@Model.ErrorMsg</p>
+
+            <input type="submit" class="ui-button ui-corner-all" data-theme="b" value="Login">
+        </form>
     </div>
 </div>
 @EndSection
