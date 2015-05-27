@@ -1,4 +1,4 @@
-## Tamlin Server ##
+# Tamlin Server #
 High-level documentation for developers working on teh Tamilin server project.
 
 ## Command Line ##
@@ -11,6 +11,26 @@ The following commands can be used to run, install and uninstall the Tamlin Serv
 * Tamlin.MCServer.Host.exe uninstall 
 
 A complete command line reference can be found [here](http://docs.topshelf-project.com/en/latest/overview/commandline.html)
+
+## Configuration ##
+All configuration settings are made in the .config file in the root directory.
+
+Database Connection String
+
+```xml
+  <connectionStrings>
+    <add name="mcnfb" connectionString="Server=(local);Database=mcnfb;Trusted_Connection=True;MultipleActiveResultSets=true;" providerName="System.Data.SqlClient"/>
+  </connectionStrings>
+```
+
+App Settings
+
+```xml
+  <appSettings>
+    <add key="web.port" value="8080"/>
+    <add key="web.hostHeader" value="mc.client.com"/>
+  </appSettings>
+```
 
 ## Views (HTML) ##
 All HTML pages can be found in the Views Folder in the Web Project.  For more information read the Nancy documentation on the [Super Simple View Engine](https://github.com/NancyFx/Nancy/wiki/The-Super-Simple-View-Engine) and Default [View Location Conventions](https://github.com/NancyFx/Nancy/wiki/View-location-conventions).
