@@ -10,6 +10,7 @@ using Microsoft.Owin.Hosting;
 using Topshelf;
 using System.Linq;
 using System.Net.Sockets;
+using System.Configuration;
 
 namespace Tamlin.MCServer.Web
 {
@@ -27,7 +28,17 @@ namespace Tamlin.MCServer.Web
         {
             _logger.Info("Web Server starting");
 
-            StartWebServer(8080);
+            var portNumberSetting = ConfigurationManager.AppSettings["web.port"];
+            var hostHeaderSetting = ConfigurationManager.AppSettings["web.hostHeader"];
+
+            int portNumber;
+            if(portNumberSetting == null || !int.TryParse(portNumberSetting, out portNumber))
+            {
+                _logger.Fatal("Port number setting must be a number");
+                return false;
+            }
+
+            StartWebServer(portNumber, hostHeaderSetting);
 
             return true;
         }
@@ -40,7 +51,7 @@ namespace Tamlin.MCServer.Web
             return true;
         }
 
-        private void StartWebServer(int port)
+        private void StartWebServer(int port, string hostHeader = null)
         {
             var httpUrlFormat = "http://{0}:{1}";
             var startOptions = new StartOptions();
@@ -56,6 +67,9 @@ namespace Tamlin.MCServer.Web
             {
                 startOptions.Urls.Add(ipHostHeader);
             }
+
+            if (hostHeader != null)
+                startOptions.Urls.Add(String.Format(httpUrlFormat, hostHeader, port));
             
             _webApp = WebApp.Start<Startup>(startOptions);
 
