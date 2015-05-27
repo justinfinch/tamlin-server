@@ -11,7 +11,6 @@ The following commands can be used to run, install and uninstall the Tamlin Serv
 * Tamlin.MCServer.Host.exe uninstall 
 
 A complete command line reference can be found [here](http://docs.topshelf-project.com/en/latest/overview/commandline.html)
-http://docs.topshelf-project.com/en/latest/overview/commandline.html
 
 ## Views (HTML) ##
 All HTML pages can be found in the Views Folder in the Web Project.  For more information read the Nancy documentation on the [Super Simple View Engine](https://github.com/NancyFx/Nancy/wiki/The-Super-Simple-View-Engine) and Default [View Location Conventions](https://github.com/NancyFx/Nancy/wiki/View-location-conventions).
