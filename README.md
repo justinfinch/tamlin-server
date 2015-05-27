@@ -1,5 +1,5 @@
 ## Tamlin Server ##
-
+High-level documentation for developers working on teh Tamilin server project.
 
 ## Command Line ##
 The following commands can be used to run, install and uninstall the Tamlin Server.
