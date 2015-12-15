@@ -334,6 +334,14 @@
   <ItemGroup>
     <EmbeddedResource Include="Views\Shared\SecureLayout.html" />
   </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="content\css\master.css" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="content\css\masterMediaQueries.css" />
+    <Content Include="content\images\logo_company.jpg" />
+    <Content Include="content\images\logo_tamlin.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
     <PostBuildEvent>

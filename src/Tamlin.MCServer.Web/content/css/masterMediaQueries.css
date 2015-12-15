@@ -1,0 +1,11 @@
+/* Really small phones */
+@media screen and (max-width:320px) {}
+
+/* Regular smart phones, including iPhone 6 + with 414px viewport! */
+@media screen and (min-width: 321px) {}
+
+/* Regular Tablets from 480 to 800px including Galaxy tablets - 768px is only good for iPad */
+@media screen and (min-width: 481px) {}
+
+/* Desktops and Laptops */
+@media screen and (min-width: 801px) {}

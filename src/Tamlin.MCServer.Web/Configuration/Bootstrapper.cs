@@ -60,6 +60,8 @@ namespace Tamlin.MCServer.Web.Configuration
         {
             base.ConfigureConventions(nancyConventions);
 
+            //nancyConventions.StaticContentsConventions.Add(StaticContentConventionBuilder.AddDirectory("css", @"\content\css"));
+
             nancyConventions.StaticContentsConventions.Add((ctx, rootPath) =>
             {
                 var path = Path.GetDirectoryName(ctx.Request.Url.Path) ?? string.Empty;

@@ -1,0 +1,62 @@
+/* --- Template --- */
+body, 
+input, 
+select, 
+textarea, 
+button, 
+.ui-btn {
+    background-color: #FFF;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.ui-overlay-a, 
+.ui-page-theme-a, 
+.ui-page-theme-a .ui-panel-wrapper {
+    background-color: #FFF;
+    font-family: 'Open Sans', sans-serif;
+}
+
+/* --- General Styles --- */
+.ui-mobile label, 
+.ui-controlgroup-label {
+    margin: 0 0 5px;
+}
+
+.ui-input-text, 
+.ui-input-search {
+    margin: 0 0 10px;
+}
+
+.ui-input-btn input.ui-action {
+}
+
+
+/* --- Header Styles --- */
+.ui-bar-a, 
+.ui-page-theme-a .ui-bar-inherit, 
+html .ui-bar-a .ui-bar-inherit, 
+html .ui-body-a .ui-bar-inherit, 
+html body .ui-group-theme-a .ui-bar-inherit {
+    background-color: #FFF;
+}
+
+/* --- Login Styles --- */
+.login-wrapper {
+    margin: 15px auto;
+    max-width: 400px;
+}
+
+    .login-logo {
+        margin: 0 auto 15px auto;
+        max-width: 400px;
+        text-align: center;
+    }
+
+        .login-logo img {
+            max-width: 300px;
+        }
+
+        .login-logo.tamlin img {
+            margin: 10px 0 0 0;
+            width: 125px;
+        }
