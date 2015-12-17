@@ -16,6 +16,11 @@ button,
     font-family: 'Open Sans', sans-serif;
 }
 
+.ui-content {
+  margin: 0 auto;
+  max-width: 800px;
+}
+
 /* --- General Styles --- */
 .ui-mobile label, 
 .ui-controlgroup-label {
@@ -29,6 +34,20 @@ button,
 
 .ui-input-btn input.ui-action {
 }
+
+/* --- Alerts / Error Messages ---- */
+.alert {
+  /*border: 1px solid #333;
+  border-radius: 5px;
+  padding: 10px;*/
+  font-weight: bold;
+}
+
+  .alert-error {
+    /*background-color: pink;
+    border: 1px solid maroon;*/
+    color: red;
+  }
 
 
 /* --- Header Styles --- */
