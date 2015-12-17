@@ -80,6 +80,7 @@
     <Compile Include="Models\ViewModel.cs" />
     <Compile Include="Modules\HomeModule.cs" />
     <Compile Include="Modules\LoginModule.cs" />
+    <Compile Include="Modules\ShopFloorModule.cs" />
     <Compile Include="Security\AuthenticatedUser.cs" />
     <Compile Include="Security\DefaultUserMapper.cs" />
     <Compile Include="Startup.cs" />
@@ -338,10 +339,12 @@
     <EmbeddedResource Include="content\css\master.css" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Views\ShopFloor\Index.html" />
     <EmbeddedResource Include="content\css\masterMediaQueries.css" />
-    <Content Include="content\images\logo_company.jpg" />
-    <Content Include="content\images\logo_tamlin.png" />
+    <EmbeddedResource Include="content\images\logo_company.jpg" />
+    <EmbeddedResource Include="content\images\logo_tamlin.png" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
     <PostBuildEvent>
