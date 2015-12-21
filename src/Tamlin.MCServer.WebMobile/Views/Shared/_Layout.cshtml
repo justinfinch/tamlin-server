@@ -1,0 +1,22 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>MC Software Mobile - @ViewBag.Title</title>
+    <link rel="stylesheet" href="//ajax.googleapis.com/ajax/libs/jquerymobile/1.4.5/jquery.mobile.min.css" />
+    <link href='//fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css' />
+    <link rel="stylesheet" href="~/Content/css/master.css" />
+
+    @*@Scripts.Render("~/Content/css")*@
+</head>
+<body>
+    @RenderBody()
+
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jquerymobile/1.4.5/jquery.mobile.min.js"></script>
+
+    @Scripts.Render("~/Content/customjs")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

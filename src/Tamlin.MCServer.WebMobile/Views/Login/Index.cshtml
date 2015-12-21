@@ -1,0 +1,35 @@
+﻿@{
+    ViewBag.Title = "Login";
+    Layout = "~/Views/Shared/_LayoutLogin.cshtml";
+}
+
+<div data-role="page">
+    <div data-role="main" class="ui-content">
+        <div class="login-wrapper">
+            <div class="login-logo org">
+                <!-- TODO: dynamically load from DB -->
+                <img src="https://bristolculture.files.wordpress.com/2010/10/better-food-company-logo.gif" alt="Company Name" />
+            </div>
+            <div class="login-form">
+                <!--<form action="login" method="post" data-ajax="false">-->
+                <!--User Name-->
+                <label for="username">User Name</label>
+                <input type="text" name="username" id="username" value="" />
+
+                <!--Password-->
+                <label for="password">Password</label>
+                <input type="password" name="password" id="password" value="" />
+
+                <p class="error-message"></p>
+
+                <input type="submit" class="ui-button ui-corner-all ui-action button-login" data-theme="b" value="Login" />
+                <!--</form>-->
+            </div>
+            <div class="login-logo tamlin">
+                <!-- TODO: make relative link; currently Nancy not recognizing relative URL -->
+                <img src="http://www.tamlinsoftware.com/wp-content/uploads/2015/08/logo-new1.png" alt="Tamlin Software" />
+            </div>
+        </div>
+    </div>
+</div>
+

@@ -1,0 +1,118 @@
+﻿/* --- Template --- */
+body, 
+input, 
+select, 
+textarea, 
+button, 
+.ui-btn {
+    background-color: #FFF;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.ui-overlay-a, 
+.ui-page-theme-a, 
+.ui-page-theme-a .ui-panel-wrapper {
+    background-color: #FFF;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.ui-content {
+  margin: 0 auto;
+  max-width: 800px;
+}
+
+.ui-bar.ui-bar-warehouse {
+    padding: 0;
+}
+
+    .ui-bar.ui-bar-warehouse .ui-mini {
+        margin: 0;
+    }
+
+.ui-page-theme-b .ui-bar-warehouse .ui-btn, 
+html .ui-bar-b .ui-bar-warehouse .ui-btn, 
+html .ui-body-b .ui-bar-warehouse .ui-btn, 
+html body .ui-group-theme-b .ui-bar-warehouse .ui-btn, 
+html head + body .ui-bar-warehouse .ui-btn.ui-btn-b, 
+.ui-page-theme-b .ui-bar-warehouse .ui-btn:visited, 
+html .ui-bar-b .ui-bar-warehouse .ui-btn:visited, 
+html .ui-body-b .ui-bar-warehouse .ui-btn:visited, 
+html body .ui-group-theme-b .ui-bar-warehouse .ui-btn:visited, 
+html head + body .ui-bar-warehouse .ui-btn.ui-btn-b:visited {
+    border: none;
+    border-radius: 0;
+}
+
+/* --- General Styles --- */
+.ui-mobile label, 
+.ui-controlgroup-label {
+    margin: 0 0 5px;
+}
+
+.ui-input-text, 
+.ui-input-search {
+    margin: 0 0 10px;
+}
+
+.ui-input-btn input.ui-action {
+}
+
+/* --- Buttons --- */
+.ui-button-action {
+    margin-top: 15px;
+}
+
+.ui-button-action .ui-input-btn input {
+    background: none;
+}
+
+.ui-page-theme-b .ui-button-action .ui-btn, html .ui-bar-b .ui-button-action .ui-btn, html .ui-body-b .ui-button-action .ui-btn, html body .ui-group-theme-b .ui-button-action .ui-btn, html head + body .ui-button-action .ui-btn.ui-btn-b, .ui-page-theme-b .ui-button-action .ui-btn:visited, html .ui-bar-b .ui-button-action .ui-btn:visited, html .ui-body-b .ui-button-action .ui-btn:visited, html body .ui-group-theme-b .ui-button-action .ui-btn:visited, html head + body .ui-button-action .ui-btn.ui-btn-b:visited {
+    background-color: #43A047;
+    border: none;
+    text-shadow: none;
+}
+
+/* --- Alerts / Error Messages ---- */
+.alert {
+  /*border: 1px solid #333;
+  border-radius: 5px;
+  padding: 10px;*/
+  font-weight: bold;
+}
+
+  .alert-error {
+    /*background-color: pink;
+    border: 1px solid maroon;*/
+    color: red;
+  }
+
+
+/* --- Header Styles --- */
+.ui-bar-a, 
+.ui-page-theme-a .ui-bar-inherit, 
+html .ui-bar-a .ui-bar-inherit, 
+html .ui-body-a .ui-bar-inherit, 
+html body .ui-group-theme-a .ui-bar-inherit {
+    background-color: #FFF;
+}
+
+/* --- Login Styles --- */
+.login-wrapper {
+    margin: 15px auto;
+    max-width: 400px;
+}
+
+    .login-logo {
+        margin: 0 auto 15px auto;
+        max-width: 400px;
+        text-align: center;
+    }
+
+        .login-logo img {
+            max-width: 300px;
+        }
+
+        .login-logo.tamlin img {
+            margin: 10px 0 0 0;
+            width: 125px;
+        }
