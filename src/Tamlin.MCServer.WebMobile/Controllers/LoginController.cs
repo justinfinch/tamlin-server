@@ -13,5 +13,12 @@ namespace Tamlin.MCServer.WebMobile.Controllers
         {
             return View();
         }
+
+        // GET: Login
+        //[HttpPost]
+        //public ActionResult Index(int test)
+        //{
+        //    return View("ShopFloor");
+        //}
     }
 }

@@ -1,7 +1,72 @@
 ﻿@{
-    ViewBag.Title = "Work in Process";
-    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+    ViewBag.Title = "Shop Floor - WIP Log";
+    ViewBag.BackBtnDesc = "Back to WS#";
+    ViewBag.BackUrl = "/ShopFloor";
+    Layout = "~/Views/Shared/_LayoutShopFloor.cshtml";
 }
 
-<h1>WIP Log</h1>
+<div data-role="main" class="ui-content-list">
+    <div data-role="collapsible">
+        <h3>WS#: 0036-001 Issue Material - Danny</h3>
+        <p>Extra info about WS# can go here...</p>
+    </div>
 
+    <h2>Available WIP Log</h2>
+
+    <ul data-role="listview" data-filter="true">
+        <li data-role="list-divider">
+            WIP Item
+            @*<div class="ui-li-count">158</div>*@
+        </li>
+        <li>
+            <a href='@Url.Action("WipSelected", "ShopFloor")'>
+                <div class="ui-grid-b">
+                    <div class="ui-block-a">
+                        Batch #: 201510007
+                        <p><b>Description:</b> SEASONING</p>
+                    </div>
+                    <div class="ui-block-b">
+                        Status
+                        <p><b>Rework</b></p>
+                    </div>
+                    <div class="ui-block-c">
+                        QTY<br />
+                        1
+                    </div>
+                </div>
+            </a>
+        </li>
+        <li>
+            <a href='@Url.Action("WipSelected", "ShopFloor")'>
+
+                <div class="ui-grid-b">
+                    <div class="ui-block-a">
+                        Batch #: 201510007
+                        <p><b>Description:</b> 0.187 HSS REAMER</p>
+                    </div>
+                    <div class="ui-block-b">
+                        Status
+                        <p><b>Notes</b></p>
+                    </div>
+                    <div class="ui-block-c">
+                        QTY<br/>
+                        1
+                    </div>
+                </div>
+
+                @*<h3>Batch #: 201510007</h3>
+                    <p><b>Description:</b> 0.187 HSS REAMER</p>*@
+
+                @*<div class="ui-grid-b">
+                    <div class="ui-block-b">
+                        <h3>Batch #: 201510007</h3>
+                        <p><b>Description:</b> 0.187 HSS REAMER</p>
+                    </div>
+                    <div class="ui-block-b">REWORK</div>
+                    <div class="ui-block-b">1</div>
+                </div>*@
+            </a>
+        </li>
+    </ul>
+</div>
+    

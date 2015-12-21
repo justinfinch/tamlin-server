@@ -3,8 +3,10 @@
     Layout = "~/Views/Shared/_LayoutLogin.cshtml";
 }
 
-<div data-role="page">
-    <div data-role="main" class="ui-content">
+
+<div data-role="main" class="ui-content">
+    @using (Html.BeginForm("Index", "ShopFloor"))
+    {
         <div class="login-wrapper">
             <div class="login-logo org">
                 <!-- TODO: dynamically load from DB -->
@@ -22,7 +24,7 @@
 
                 <p class="error-message"></p>
 
-                <input type="submit" class="ui-button ui-corner-all ui-action button-login" data-theme="b" value="Login" />
+                <input type="submit" class="ui-button ui-corner-all ui-action" data-theme="b" value="Login" />
                 <!--</form>-->
             </div>
             <div class="login-logo tamlin">
@@ -30,6 +32,7 @@
                 <img src="http://www.tamlinsoftware.com/wp-content/uploads/2015/08/logo-new1.png" alt="Tamlin Software" />
             </div>
         </div>
-    </div>
+    }
 </div>
+
 

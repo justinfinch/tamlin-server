@@ -8,3 +8,7 @@ function login() {
         window.location = '/ShopFloor.html';
     });
 };
+
+function goToPage(url) {
+    window.location = url;
+};

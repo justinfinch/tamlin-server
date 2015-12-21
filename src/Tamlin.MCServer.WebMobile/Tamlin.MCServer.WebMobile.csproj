@@ -449,6 +449,9 @@
     <Content Include="Views\ShopFloor\Wip.cshtml" />
     <Content Include="Views\ShopFloor\WipDetails.cshtml" />
     <Content Include="Views\ShopFloor\WipSelected.cshtml" />
+    <Content Include="Views\Shared\_HeaderBarView.cshtml" />
+    <Content Include="Views\Shared\_WarehouseBarView.cshtml" />
+    <Content Include="Views\Shared\_LayoutShopFloor.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

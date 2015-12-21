@@ -1,7 +1,26 @@
 ﻿@{
     ViewBag.Title = "Shop Floor";
-    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+    ViewBag.BackBtnDesc = "Logout";
+    ViewBag.BackUrl = "/Login";
+    Layout = "~/Views/Shared/_LayoutShopFloor.cshtml";
 }
 
-<h1>Shop Floor</h1>
+<div data-role="main" class="ui-content">
+    @using (Html.BeginForm("Wip", "ShopFloor"))
+    {
+        <!--Station-->
+        <label for="station">Enter WS #</label>
+        <input type="text" name="station" id="station" value="" />
 
+        <!--Batch Number-->
+        <!--<label for="batchNum">Batch #</label>
+        <input type="number" name="batchNum" id="batchNum" value="" />-->
+        <!--Qty-->
+        <!--<label for="quantity">Quantity</label>
+        <input type="number" name="quantity" id="quantity" value="" />-->
+
+        <div class="ui-button-action">
+            <input type="submit" class="ui-button ui-corner-all ui-button-action" data-theme="b" value="Start Job">
+        </div>
+    }
+</div>

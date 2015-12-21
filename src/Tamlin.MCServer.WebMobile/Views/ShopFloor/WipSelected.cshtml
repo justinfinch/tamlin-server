@@ -1,7 +1,75 @@
-﻿
-@{
-    ViewBag.Title = "WIP Selected";
+﻿@{
+    ViewBag.Title = "Shop Floor - WIP Selected";
+    ViewBag.BackBtnDesc = "Back to WIP Log";
+    ViewBag.BackUrl = "/ShopFloor/WIP";
+    Layout = "~/Views/Shared/_LayoutShopFloor.cshtml";
 }
 
-<h1>Selected WIP/Batch#</h1>
+<div data-role="main" class="ui-content-list">
+    <div data-role="collapsible">
+        <h3>WS#: 0036-001 Issue Material - Danny</h3>
+        <p>Extra info about WS# can go here...</p>
+    </div>
+
+    <div class="input-short">
+        <div data-role="fieldcontain">
+            <label for="name">QTY:</label>
+            <input type="text" name="name" id="name" value="1" style="width: 100px;" />
+        </div>
+    </div>
+
+    <div class="selected-work-info">
+        <h2>Batch #: 201510007</h2>
+        <strong>Item #:</strong> SEASONING<br />
+        <strong>Desc:</strong> SEASONING<br />
+        <strong>Arrival:</strong> 10/14/2015 01:28PM<br />
+        <strong>Opr #:</strong> 100<br />
+        <strong>Alt:</strong>
+    </div>
+
+    <div class="selected-work-options" style="margin-top: 25px;">
+        <div data-role="controlgroup" data-type="horizontal">
+            <a href="index.html" data-role="button" data-icon="grid">BOM</a>
+            <a href="index.html" data-role="button" data-icon="star">IP</a>
+            <a href="index.html" data-role="button" data-icon="check">Available WIP Log</a>
+        </div>
+
+        <a href="#" class="ui-btn ui-btn-inline ui-icon-grid ui-btn-icon-top">BOM</a>
+        <a href="#" class="ui-btn ui-btn-inline ui-icon-star ui-btn-icon-top">IPI</a>
+        <a href="#" class="ui-btn ui-btn-inline ui-icon-check ui-btn-icon-top">Available WIP Log</a>
+        <a href="#" class="ui-btn ui-btn-inline ui-icon-gear ui-btn-icon-top">More</a>
+
+        <fieldset data-role="controlgroup" data-type="horizontal">
+            <label for="select-native-11">Select A</label>
+            <select name="select-native-11" id="select-native-11">
+                <option value="#">One</option>
+                <option value="#">Two</option>
+                <option value="#">Three</option>
+            </select>
+            <label for="select-native-12">Select B</label>
+            <select name="select-native-12" id="select-native-12">
+                <option value="#">One</option>
+                <option value="#">Two</option>
+                <option value="#">Three</option>
+            </select>
+            <label for="select-native-13">Select C</label>
+            <select name="select-native-13" id="select-native-13">
+                <option value="#">More</option>
+                <option value="#">Menu Item #1</option>
+                <option value="#">Menu Item #2</option>
+            </select>
+        </fieldset>
+    </div>
+</div>
+
+<div data-role="footer" data-position="fixed">
+    <div data-role="navbar">
+        <ul>
+            <li><a href="#" data-icon="check">Complete</a></li>
+            <li><a href="#" data-icon="delete">Incomplete</a></li>
+        </ul>
+    </div>
+</div>
+
+
 
