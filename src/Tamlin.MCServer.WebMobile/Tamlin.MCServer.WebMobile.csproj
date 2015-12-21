@@ -452,6 +452,7 @@
     <Content Include="Views\Shared\_HeaderBarView.cshtml" />
     <Content Include="Views\Shared\_WarehouseBarView.cshtml" />
     <Content Include="Views\Shared\_LayoutShopFloor.cshtml" />
+    <Content Include="Views\ShopFloor\Bom.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

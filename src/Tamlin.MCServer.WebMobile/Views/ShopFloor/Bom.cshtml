@@ -1,0 +1,37 @@
+﻿@{
+  ViewBag.Title = "Shop Floor - BOM";
+  ViewBag.BackBtnDesc = "Back to Selected WIP";
+  ViewBag.BackUrl = "/ShopFloor/WipSelected";
+  Layout = "~/Views/Shared/_LayoutShopFloor.cshtml";
+}
+
+<div data-role="main" class="ui-content-list">
+  <div data-role="collapsible">
+    <h3>WS#: 0036-001 Issue Material - Danny</h3>
+    <p>Extra info about WS# can go here...</p>
+  </div>
+
+  <div data-role="collapsible">
+    <h3>Batch#: 201510007 - SEASONING</h3>
+    <p>Extra info about Batch # can go here...</p>
+  </div>
+
+  <div class="enter-item-wrapper">
+    <div style="float: left;">
+      <input type="text" name="name" id="name" value="" />
+    </div>
+    <div style="float: left;">
+      <a href="index.html" data-role="button" data-inline="true">Allocate</a>
+    </div>
+
+    @*<div class="ui-grid-a">
+      <div class="ui-block-a" style="width: 60%">
+        <input type="text" name="name" id="name" value="" />
+      </div>
+      <div class="ui-block-b" style="width: 40%">
+        <a href="index.html" data-role="button" data-inline="true">Allocate</a>
+      </div>
+    </div>*@
+  </div>
+
+</div>

@@ -28,18 +28,18 @@
     </div>
 
     <div class="selected-work-options" style="margin-top: 25px;">
-        <div data-role="controlgroup" data-type="horizontal">
+        @*<div data-role="controlgroup" data-type="horizontal">
             <a href="index.html" data-role="button" data-icon="grid">BOM</a>
             <a href="index.html" data-role="button" data-icon="star">IP</a>
-            <a href="index.html" data-role="button" data-icon="check">Available WIP Log</a>
-        </div>
+            <a href="index.html" data-role="button" data-icon="check">WIP Log</a>
+        </div>*@
 
-        <a href="#" class="ui-btn ui-btn-inline ui-icon-grid ui-btn-icon-top">BOM</a>
+        <a href='@Url.Action("Bom", "ShopFloor")' class="ui-btn ui-btn-inline ui-icon-grid ui-btn-icon-top">BOM</a>
         <a href="#" class="ui-btn ui-btn-inline ui-icon-star ui-btn-icon-top">IPI</a>
-        <a href="#" class="ui-btn ui-btn-inline ui-icon-check ui-btn-icon-top">Available WIP Log</a>
+        <a href="#" class="ui-btn ui-btn-inline ui-icon-check ui-btn-icon-top">WIP Log</a>
         <a href="#" class="ui-btn ui-btn-inline ui-icon-gear ui-btn-icon-top">More</a>
 
-        <fieldset data-role="controlgroup" data-type="horizontal">
+        @*<fieldset data-role="controlgroup" data-type="horizontal">
             <label for="select-native-11">Select A</label>
             <select name="select-native-11" id="select-native-11">
                 <option value="#">One</option>
@@ -58,7 +58,7 @@
                 <option value="#">Menu Item #1</option>
                 <option value="#">Menu Item #2</option>
             </select>
-        </fieldset>
+        </fieldset>*@
     </div>
 </div>
 
