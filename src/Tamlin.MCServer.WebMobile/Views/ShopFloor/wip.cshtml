@@ -11,8 +11,19 @@
         <p>Extra info about WS# can go here...</p>
     </div>
 
-    <h2>Available WIP Log</h2>
+    <h2 class="title-small-margin">Available WIP Log</h2>
 
+    <div class="input-btn-group" style="margin-bottom: 20px">
+        <h3>Enter or Scan Batch #</h3>
+        <div class="group-item input-field">
+            <input type="text" name="name" id="name" value="" />
+        </div>
+        <div class="group-item">
+            <a href="index.html" data-role="button" data-inline="true">Get Batch</a>
+        </div>
+    </div>
+
+    <!-- NOTE: Hide/show listview based on privledges??? -->
     <ul data-role="listview" data-filter="true">
         <li data-role="list-divider">
             WIP Item

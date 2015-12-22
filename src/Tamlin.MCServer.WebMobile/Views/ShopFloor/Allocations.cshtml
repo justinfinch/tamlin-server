@@ -1,0 +1,69 @@
+﻿@{
+    ViewBag.Title = "Shop Floor - BOM - Allocations";
+    ViewBag.BackBtnDesc = "Back to BOM";
+    ViewBag.BackUrl = "/ShopFloor/Bom";
+    Layout = "~/Views/Shared/_LayoutShopFloor.cshtml";
+}
+
+<div data-role="main" class="ui-content-list">
+    <div class="header-info">
+        @*<div data-role="collapsible">
+            <h3>WS#: 0036-001 Issue Material - Danny</h3>
+            <p>Extra info about WS# can go here...</p>
+        </div>
+
+        <div data-role="collapsible">
+            <h3>Batch#: 201510007 - SEASONING</h3>
+            <p>Extra info about Batch # can go here...</p>
+        </div>*@
+
+        <div data-role="collapsible">
+            <h3 class="error">
+                RM Item #: RW-DEER-SUMMER
+            </h3>
+            <p>Extra info about RM Item # can go here...</p>
+        </div>
+
+        <div class="badge-wrapper">
+            <div class="badge badge-error">+/- BOM: 0</div>
+            <div class="badge">Total Qty: 0</div>
+            <div class="badge">U/M: LBS</div>
+            <div class="badge">Alloc: 0</div>
+            <div class="badge">Units: 0</div>
+        </div>
+
+        <div class="clear"></div>
+
+        <div class="custom-list-view allocations-list-view">
+            <div data-role="collapsible" data-collapsed="false">
+                <h3>Available Items</h3>
+                <ul data-role="listview" data-inset="true" data-filter="true">
+                    <li>
+                            <span class="error">Lot #: 152790001</span><br />
+                            <div class="actions-wrapper">
+                                <div class="actions-item">
+                                    <input type="submit" data-mini="true" class="ui-button ui-corner-all ui-button-action" value="Allocate">
+                                </div>
+                            </div>
+                    </li>
+                    <li>
+                        <span class="error">Lot #: 152790001</span><br />
+                        <div class="actions-wrapper">
+                            <div class="actions-item">
+                                <input type="submit" data-mini="true" class="ui-button ui-corner-all ui-button-action" value="Allocate">
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+
+            @*<div data-role="collapsible">
+                <h3>Allocated BOM (2)</h3>
+                <ul data-role="listview" data-inset="true">
+                    <li><a href="#">Allocation 1</a></li>
+                    <li><a href="#">Allocation 2</a></li>
+                </ul>
+            </div>*@
+        </div>
+    </div>
+</div>

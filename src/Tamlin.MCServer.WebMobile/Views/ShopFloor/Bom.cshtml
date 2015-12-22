@@ -1,37 +1,96 @@
 ﻿@{
-  ViewBag.Title = "Shop Floor - BOM";
-  ViewBag.BackBtnDesc = "Back to Selected WIP";
-  ViewBag.BackUrl = "/ShopFloor/WipSelected";
-  Layout = "~/Views/Shared/_LayoutShopFloor.cshtml";
+    ViewBag.Title = "Shop Floor - BOM";
+    ViewBag.BackBtnDesc = "Back to Selected WIP";
+    ViewBag.BackUrl = "/ShopFloor/WipSelected";
+    Layout = "~/Views/Shared/_LayoutShopFloor.cshtml";
 }
 
 <div data-role="main" class="ui-content-list">
-  <div data-role="collapsible">
-    <h3>WS#: 0036-001 Issue Material - Danny</h3>
-    <p>Extra info about WS# can go here...</p>
-  </div>
+    <div class="header-info">
+        <div data-role="collapsible">
+            <h3>WS#: 0036-001 Issue Material - Danny</h3>
+            <p>Extra info about WS# can go here...</p>
+        </div>
 
-  <div data-role="collapsible">
-    <h3>Batch#: 201510007 - SEASONING</h3>
-    <p>Extra info about Batch # can go here...</p>
-  </div>
-
-  <div class="enter-item-wrapper">
-    <div style="float: left;">
-      <input type="text" name="name" id="name" value="" />
-    </div>
-    <div style="float: left;">
-      <a href="index.html" data-role="button" data-inline="true">Allocate</a>
+        <div data-role="collapsible">
+            <h3>Batch#: 201510007 - SEASONING</h3>
+            <p>Extra info about Batch # can go here...</p>
+        </div>
     </div>
 
-    @*<div class="ui-grid-a">
-      <div class="ui-block-a" style="width: 60%">
-        <input type="text" name="name" id="name" value="" />
-      </div>
-      <div class="ui-block-b" style="width: 40%">
-        <a href="index.html" data-role="button" data-inline="true">Allocate</a>
-      </div>
-    </div>*@
-  </div>
+    <hr style="margin-top: 25px;" />
 
+    <div class="input-btn-group" style="margin-bottom: 20px;">
+        <h3>Enter or Scan Lot/Item #</h3>
+        <div class="group-item input-field">
+            <input type="text" name="name" id="name" value="" placeholder="Enter or Scan Lot/Item #" />
+        </div>
+        <div class="group-item">
+            <a href="index.html" data-role="button" data-inline="true">Allocate</a>
+        </div>
+    </div>
+
+    <div class="custom-list-view">
+        <div data-role="collapsible" data-collapsed="false">
+            <h3>Required Items</h3>
+            <ul data-role="listview" data-inset="true" data-filter="true">
+                <li>
+                    <a href='@Url.Action("Allocations", "ShopFloor")'>
+                        <span class="error">RM Item #: RW-DEER-SUMMER</span><br />
+                        <div class="badge-wrapper">
+                            <div class="badge badge-error">+/- BOM: 0</div>
+                            <div class="badge">Total Qty: 0</div>                            
+                            <div class="badge">U/M: LBS</div>
+                            <div class="badge">Alloc: 0</div>
+                            <div class="badge">Units: 0</div>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href='@Url.Action("Allocations", "ShopFloor")'>
+                        <span class="success">RM Item #: RW-PEPPER-BACON</span><br />
+                        <div class="badge-wrapper">
+                            <div class="badge badge-success">+/- BOM: 5</div>
+                            <div class="badge">Total Qty: 5</div>
+                            <div class="badge">U/M: LBS</div>
+                            <div class="badge">Alloc: 10</div>
+                            <div class="badge">Units: 0</div>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href='@Url.Action("Allocations", "ShopFloor")'>
+                        <span>RM Item #: RW-PAPRIKA</span><br />
+                        <div class="badge-wrapper">
+                            <div class="badge">+/- BOM: 0</div>
+                            <div class="badge">Total Qty: 5</div>
+                            <div class="badge">U/M: LBS</div>
+                            <div class="badge">Alloc: 0</div>
+                            <div class="badge">Units: 0</div>
+                        </div>
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+        <div data-role="collapsible">
+            <h3>Allocated BOM (2)</h3>
+            <ul data-role="listview" data-inset="true">
+                <li><a href="#">Allocation 1</a></li>
+                <li><a href="#">Allocation 2</a></li>
+            </ul>
+        </div>
+    </div>
 </div>
+
+@section scripts {
+    <script type="text/javascript">
+        $(document).ready(function () {
+            //bomTab();
+        });
+
+        //function bomTab() {
+        //    $('#bom-tab-one').trigger('click');
+        //};
+    </script>
+}

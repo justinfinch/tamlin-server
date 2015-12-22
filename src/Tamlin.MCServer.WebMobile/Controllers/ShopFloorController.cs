@@ -33,5 +33,10 @@ namespace Tamlin.MCServer.WebMobile.Controllers
         {
             return View();
         }
+
+        public ActionResult Allocations()
+        {
+            return View();
+        }
     }
 }

@@ -5,3 +5,7 @@
 @Html.Partial("_WarehouseBarView")
 
 @RenderBody()
+
+@section scripts {
+    @RenderSection("scripts", required: false)
+}

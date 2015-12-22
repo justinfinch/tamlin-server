@@ -9,6 +9,8 @@ button,
     font-family: 'Open Sans', sans-serif;
 }
 
+.clear { clear: both; }
+
 .ui-overlay-a, 
 .ui-page-theme-a, 
 .ui-page-theme-a .ui-panel-wrapper {
@@ -66,6 +68,42 @@ html head + body .ui-bar-warehouse .ui-btn.ui-btn-b:visited {
     height: 25px;
 }
 
+h2.title-small-margin {
+    margin-bottom: 0;
+}
+
+h3.title {
+    margin-top: 0;
+}
+
+/* --- Status Colors --- */
+.success, h3.success {
+    color: #186d18;
+    font-weight: bold;
+}
+
+.error, h3.error a {
+    color: #980000;
+    font-weight: bold;
+}
+
+.error .ui-page-theme-a .ui-btn, 
+.error html .ui-bar-a .ui-btn, 
+.error html .ui-body-a .ui-btn, 
+.error html body .ui-group-theme-a .ui-btn, 
+.error html head + body .ui-btn.ui-btn-a, 
+.error .ui-page-theme-a .ui-btn:visited, 
+.error html .ui-bar-a .ui-btn:visited, 
+.error html .ui-body-a .ui-btn:visited, 
+.error html body .ui-group-theme-a .ui-btn:visited, 
+.error html head + body .ui-btn.ui-btn-a:visited {
+    color: #980000;
+}
+
+.ui-page-theme-a .ui-btn, html .ui-bar-a .ui-btn, html .ui-body-a .ui-btn, html body .ui-group-theme-a .ui-btn, html head + body .ui-btn.ui-btn-a, .ui-page-theme-a .ui-btn:visited, html .ui-bar-a .ui-btn:visited, html .ui-body-a .ui-btn:visited, html body .ui-group-theme-a .ui-btn:visited, html head + body .ui-btn.ui-btn-a:visited {
+    color: inherit;
+}
+
 /* --- Buttons --- */
 .ui-button-action {
     margin-top: 15px;
@@ -86,6 +124,55 @@ html head + body .ui-bar-warehouse .ui-btn.ui-btn-b:visited {
   width: 75px;
 }
 
+.actions-wrapper {
+    margin-top: 10px;
+}
+
+    .actions-item {
+        display: block;
+        float: left;
+    }
+
+/* --- Badges --- */
+.badge-wrapper {
+    margin-top: 10px;
+}
+
+.badge {
+    background: #FFF;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-sizing: content-box;
+    color: #333;
+    cursor: pointer;
+    display: inline-block;
+    float: left;
+    font-size: 14px;
+    font-weight: bold;
+    margin-right: 10px;
+    -moz-box-sizing: content-box;
+    -o-text-overflow: clip;
+    padding: 5px 20px;
+    text-overflow: clip;
+    text-shadow: none;
+    -webkit-border-radius: 3px;
+    -webkit-box-sizing: content-box;
+}
+
+.badge.badge-error {
+  background: #980000;
+  border: 1px solid transparent;
+  color: #FFF;
+  font-weight: bold;
+}
+
+.badge.badge-success {
+    background: #186d18;
+    border: 1px solid transparent;
+    color: #FFF;
+    font-weight: bold;
+}
+
 /* --- Input Fields --- */
 .input-short {
     margin: 20px 0;
@@ -103,6 +190,45 @@ html head + body .ui-bar-warehouse .ui-btn.ui-btn-b:visited {
 .input-short .ui-field-contain .ui-controlgroup-controls {
     text-align: center;
     width: 100px;
+}
+
+/* - Input w/ Button - */
+.input-btn-group {
+    display: block;
+    overflow: hidden;
+}
+
+.input-btn-group h3 {
+    margin: 15px 0 10px 0;
+}
+
+.input-btn-group .group-item {
+    float: left;
+}
+
+.input-btn-group .group-item.input-field {
+    margin: 0 8px 0 0;
+    width: 50%;
+}
+
+.input-btn-group .ui-btn {
+    height: 13px;
+    margin: 0;
+    padding: 7px 20px 15px 20px;
+}
+
+/* --- Tab Styles --- */
+.tab-view {
+    display: block;
+    margin: 20px 0;
+}
+
+.tab-view .ui-tab {
+    padding: 0;
+}
+
+.tab-view .ui-navbar li .ui-btn {
+    font-size: 16px;
 }
 
 /* --- Alerts / Error Messages ---- */
@@ -171,3 +297,13 @@ html body .ui-group-theme-a .ui-bar-inherit {
             margin: 10px 0 0 0;
             width: 125px;
         }
+
+/* --- BOM Styles --- */
+.custom-list-view .ui-collapsible-content > form.ui-filterable {
+    margin-top: 5px;
+}
+
+/* --- Allocations Styles --- */
+.allocations-list-view {
+    margin-top: 30px;
+}
